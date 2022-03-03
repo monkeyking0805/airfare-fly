@@ -1,0 +1,2621 @@
+<template>
+  <div class="homepage">
+
+    <!-- Hero section -->
+      <div class="relative hero-section h-hero flex">
+        <div class="logo absolute left-0 top-0">
+              <img class="w-1/3" src="~/assets/images/logo.png" alt="">
+        </div>
+
+        <div class="text-box">
+
+          <div class="product-cta">
+              <div class="header">
+                <h1 class="heading text-center">Snack healthy on the fly</h1>
+
+                <p class="paragraph text-center">join other flight crew and travelers, <strong>risk-free</strong></p>
+            </div>
+              <div class="product-heading-2">
+                <h4 class="text-2xl font-semibold leading-tight sub-heading">snack sampler <br><span class="paragraph" style="color:#3CA06B">free shipping</span></h4>
+                <p class="sub-heading" style="color:#48A578"><s class="text-black sub-heading">$18</s> $15</p>
+              </div>
+              <div class="bullets-2">
+                <ul class="list-disc m-0 paragraph">
+                  <li>a pouch of our 4 most popular snacks</li>
+                  <li>perfect mix of sweet, salty and savory</li>
+                  <li>100% plant ingredients</li>
+                  <li>no added sugars or oils, high in fiber and protein</li>
+              </ul>
+            </div>
+            <div class="cta-2 pt-6">
+              <a href="https://airfarepouch.com/product/the-airfare-snack-pouch?add-to-cart=true" class="takeoff-btn text-center my-3 w-1/1 bg-green-400 px-20 py-4 rounded-full text-white font-semibold">START SNACKING NOW</a>
+              <!-- <button class="explore-btn w-1/1 px-20 py-4 rounded-full text-green-400 font-semibold border-custom">EXPLORE MEMBERSHIP OPTIONS</button> -->
+          </div>
+
+          </div>
+        </div>
+
+        <div class="hero-bg absolute">
+              <img src="~/assets/images/hero1.png" />
+        </div>
+      </div>
+      <!-- Hero section end -->
+
+
+      <!-- Timeline -->
+<div class="timeline-header text-center pt-16">
+  <h1 class="heading">How it works</h1>
+  <p class="paragraph">airfare sends pouches of healthy, plant-based snacks to pilots, flight attendants and air travelers to keep them confident and healthy on the fly</p>
+</div>
+<div class="timeline_container py-20 w-8/12">
+
+  <v-timeline>
+    <v-timeline-item
+      v-for="timeline in timelines"
+      :key="timeline.step">
+      <template v-slot:opposite>
+        <img :class="{'imageRight': timeline.id%2==0}" :src="require('~/assets/images/'+timeline.img)" alt="">
+      </template>
+      <div class="py-0 text-left" :class="{'text-right' : timeline.id%2==0}">
+        <h4 style="color:#3DA16A;font-size:.875rem;font-weight:700;" class="paragraph">{{timeline.step}}</h4>
+        <h2 stye="color:#231E20" class="sub-heading font-bold mb-4" v-html="timeline.title"></h2>
+        <div class="step-des">
+          <p class="paragraph" style="font-weight:500" v-html="timeline.description"></p>
+        </div>
+      </div>
+    </v-timeline-item>
+  </v-timeline>
+  </div>
+  <!-- Timeline end -->
+
+<!-- Testimonials -->
+<div class="testimonials mt-5 relative">
+
+<div class="testimonials-inner py-10">
+      <h1 class="heading pb-3 text-white flex-none">Praise from the airfare crew</h1>
+    <VueSlickCarousel ref="testimonial" class="text-white flex space-x-20">
+            <div class="single">
+                <p class="italic paragraph-white">“I did not pack a lunch on a recent trip because I was supposed to have an hour layover. Three hours later, there were no crew cars available. I <b>chowed down</b> on the <b>strategically chosen snacks</b> inside the pouch, and it brought the <b>clean energy</b> I needed to get the return flight home accomplished.”</p>
+                <p class="font-bold pt-5 text-xl">Aubrey W.</p>
+                <p class="italic text-xl">Air Transport Pilot</p>
+              </div>
+              <div class="single">
+                <p class="italic paragraph-white">“I <b>loved</b> this pouch. I bring basically 100% of my own food when I’m flying, but these snacks are so healthy that they’re perfect to mix in. I haven’t come across any that I don’t like yet!”</p>
+                <p class="font-bold pt-5 text-xl">Fernando C.</p>
+                <p class="italic text-xl">Envoy Air Captain</p>
+              </div>
+              <div class="single">
+                <p class="italic paragraph-white">“It takes time to manage everything on my checklist, and the pouch made it easier to have <b>everything packed</b> so I <b>don’t have to worry</b> on flight day.”</p>
+                <p class="font-bold pt-5 text-xl">Jesse H.</p>
+                <p class="italic text-xl">Alaska Airlines Pilot</p>
+              </div>
+              <div class="single">
+                <p class="italic paragraph-white">“<b>Loved this pouch!</b> The dried mangos and broccoli cheddar bites were some of the <b>most delicious snacks I’ve had</b>. As a pilot, it’s convenient to have this in my lunchbox to <b>avoid the expensive and unhealthy</b> airport restaurants.”</p>
+                <p class="font-bold pt-5 text-xl">John H.</p>
+                <p class="italic text-xl">Air Direct Airways Flight Instructor</p>
+              </div>
+          </VueSlickCarousel>
+
+          <div class="slideNav">
+            <button class="prev" @click="showPrevTestimonial"></button>
+            <button class="next" @click="showNextTestimonial"></button>
+
+          </div>
+  </div>
+
+  <div class="testimonial-bg absolute">
+    <img src="~/assets/images/airfare-collagev2.png" />
+  </div>
+
+</div>
+
+<!-- Testimonials end -->
+
+<!-- What boxes section -->
+  <div class="what_in_our_pouches md:w-9/12 mx-auto pt-5">
+    <h1 class="heading text-center">What’s in a pouch?</h1>
+    <p class="text-center paragraph">each pouch consists of snacks sourced from boutique health food companies and made from a balanced mix of fruits, veggies, nuts, seeds, legumes, and spices containing about 700 calories, 20 grams of protein, and 15 grams of fiber</p>
+    <div class="whats_boxes">
+      <div class="box md:w-1/4 h-auto text-center shadow-custom p-5">
+        <img class="w-32 mx-auto" src="~/assets/images/plant-based.jpg" alt="">
+        <p class="font-bold text-sm">100% <br>plant ingredients</p>
+      </div>
+      <div class="box md:w-1/4 h-auto text-center shadow-custom p-5">
+        <img class="w-32 mx-auto" src="~/assets/images/sugar.jpg" alt="">
+        <p class="font-bold text-sm">no added sugars <br>or sweetners</p>
+      </div>
+      <div class="box md:w-1/4 h-auto text-center shadow-custom p-5">
+        <img class="w-32 mx-auto" src="~/assets/images/protein.jpg" alt="">
+        <p class="font-bold text-sm">excellent source <br>of protein and fiber</p>
+      </div>
+      <div class="box md:w-1/4 h-auto text-center shadow-custom p-5">
+        <img class="w-32 mx-auto" src="~/assets/images/gluten.jpg" alt="">
+        <p class="font-bold text-sm">gluten <br>free</p>
+      </div>
+      <div class="box md:w-1/4 h-auto text-center shadow-custom p-5">
+        <img class="w-32 mx-auto" src="~/assets/images/paleo.jpg" alt="">
+        <p class="font-bold text-sm">paleo <br>friendly</p>
+      </div>
+      <div class="box md:w-1/4 h-auto text-center shadow-custom p-5">
+        <img class="w-32 mx-auto" src="~/assets/images/healthy.jpg" alt="">
+        <p class="font-bold text-sm">#actuallyhealthy</p>
+      </div>
+    </div>
+  </div>
+
+<!-- What boxes section end -->
+
+<!-- FAQ section -->
+
+<div class="faq_container bg-blue-300 mt-40 md:py-10">
+  <div class="faq_box_container pt-5">
+    <h1 class="heading text-center pb-8">Frequently asked questions</h1>
+    <div class="faq-box shadow-custom rounded p-4 bg-white">
+      <div class="faq flex justify-between pb-2">
+        <p class="paragraph font-normal">How much is shipping?</p>
+        <p class="paragraph font-normal text-right">Free</p>
+      </div>
+      <div class="faq flex justify-between pb-2">
+        <p class="paragraph font-normal">If I’m unsatisfied, do I really get my money back?</p>
+        <p class="paragraph font-normal text-right">Yes</p>
+      </div>
+      <div class="faq flex justify-between pb-2">
+        <p class="paragraph font-normal">Can I customize the snacks in my pouch?</p>
+        <p class="paragraph font-normal text-right">Members can</p>
+      </div>
+      <div class="faq flex justify-between pb-2">
+        <p class="paragraph font-normal">Will you ship a pouch to my hotel?</p>
+        <p class="paragraph font-normal text-right">Yes</p>
+      </div>
+      <div class="faq flex justify-between pb-2">
+        <p class="paragraph font-normal">Do you ship to Canada?</p>
+        <p class="paragraph font-normal text-right">Yes</p>
+      </div>
+      <div class="faq flex justify-between pb-2">
+        <p class="paragraph font-normal">Can I order a pouch as a gift?</p>
+        <p class="paragraph font-normal text-right">Yes</p>
+      </div>
+      <div class="faq flex justify-between pb-2">
+        <p class="paragraph font-normal">Do I have to be a pilot to eat your snacks?</p>
+        <p class="paragraph font-normal text-red-600 text-right">No</p>
+      </div>
+      <div class="faq flex justify-between pb-2">
+        <p class="paragraph font-normal">Can I eat the pouch itself?</p>
+        <p class="paragraph font-normal text-red-600 text-right" style="color:#e53e3e">Bad idea</p>
+      </div>
+      <div class="faq flex justify-between pb-2">
+        <p class="paragraph font-normal">Can I send you pictures of my dog?</p>
+        <p class="paragraph font-normal text-right">Yes</p>
+      </div>
+    </div>
+    <div class="cta text-center pt-10">
+      <a href="https://airfarepouch.com/product/the-airfare-snack-pouch?add-to-cart=true" class="takeoff-btn my-3 w-2/4 bg-green-400 px-20 py-4 rounded-full text-white font-semibold uppercase">join other flight crew and travelers, risk-free</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ section end -->
+
+<!-- Reviews section -->
+<div class="reviews_container">
+  <div class="reviews">
+    <h1 class="heading text-center pb-8">Happy airfare members</h1>
+    <VueSlickCarousel ref="review" v-bind="reviewsSlider" class="pt-10">
+        <div class="review">
+          <img src="~/assets/images/review1.jpg" />
+        </div>
+        <div class="review">
+          <img src="~/assets/images/review2.jpg" />
+        </div>
+        <div class="review">
+          <img src="~/assets/images/review3.png" />
+        </div>
+        <div class="review">
+          <img src="~/assets/images/review4.jpg" />
+        </div>
+
+    </VueSlickCarousel>
+    <div class="slideNav">
+            <button class="prev" @click="showPrevReview"></button>
+            <button class="next" @click="showNextReview"></button>
+    </div>
+  </div>
+</div>
+<!-- Reviews section -->
+
+<!-- Footer section -->
+<div class="footer_container relative">
+
+    <div class="footer-cta-2">
+      <div class="cta-content">
+        <h1 class="heading leading-tight text-white pb-3 text-center">Get your pouch</h1>
+        <a href="https://airfarepouch.com/product/the-airfare-snack-pouch?add-to-cart=true" class="footer takeoff-btn my-3 bg-green-400 px-20 py-10 rounded-full text-white font-semibold mt-5">START SNACKING NOW</a>
+      </div>
+    </div>
+
+    <div class="mobile-footer-bg-2 absolute">
+      <img src="~/assets/images/AIRFARE-bottom-cta.png" />
+    </div>
+
+</div>
+<!-- Footer section -->
+
+
+
+</div> <!-- Page end -->
+
+
+</template>
+
+
+
+<script>
+  import VueSlickCarousel from 'vue-slick-carousel'
+  import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+
+export default {
+  data: () => ({
+    reviewsSlider: {
+      "dots": false,
+      "dotsClass": "slick-dots custom-dot-class",
+      "edgeFriction": 0.35,
+      "infinite": true,
+      "speed": 500,
+      "slidesToShow": 3,
+      "slidesToScroll": 1,
+      "responsive": [
+        {
+      "breakpoint": 1024,
+      "settings": {
+        "slidesToShow": 3,
+        "slidesToScroll": 3,
+        "infinite": true,
+        "dots": false
+      }
+    },
+    {
+      "breakpoint": 600,
+      "settings": {
+        "slidesToShow": 2,
+        "slidesToScroll": 2,
+        "initialSlide": 2
+      }
+    },
+    {
+      "breakpoint": 480,
+      "settings": {
+        "slidesToShow": 1,
+        "slidesToScroll": 1
+      }
+    }]},
+    reverse: true,
+    timelines: [
+      {
+        id: 1,
+        img: 'Airfare-1.jpg',
+        step: '1',
+        title: 'order your snacks',
+        description: 'tell us your information, when you want the pouch, and your dietary preferences'
+      },
+      {
+        id: 2,
+        img: 'airfare-2.jpg',
+        step: '2',
+        title: 'we ship it',
+        description: 'we send the pouch wherever you need, whenever you need it'
+      },
+      {
+
+        id: 3,
+        img: 'Airfare-3.jpg',
+        step: '3',
+        title: 'you snack healthy in the sky',
+        description: 'enjoy tasty, nutritious snacks on the plane, during a sit, or at the hotel'
+      },
+      {
+
+        id: 4,
+        img: 'airfare-4.jpg',
+        step: '4',
+        title: 'get more snacks...<br>become a member',
+        description: 'when you want more 100% plant nutrition delivered monthly on your schedule, <b>become an airfare member</b>'
+      }
+    ]
+  }),
+
+  methods: {
+    showPrevTestimonial() {
+        this.$refs.testimonial.prev()
+      },
+
+    showNextTestimonial() {
+        this.$refs.testimonial.next()
+      },
+    showPrevReview() {
+        this.$refs.review.prev()
+      },
+
+    showNextReview() {
+        this.$refs.review.next()
+      }
+  },
+
+  head: {
+    title: 'airfare: plane. healthy. snacks.',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'airfare sends pouches of healthy, plant-based snacks to pilots, flight attendants and air travelers. airfare pouches are the only actually healthy and delicious, no-sugar-added, protein- and fiber-rich snacks perfectly fit for flight.'
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content: 'https://cdn.shopify.com/s/files/1/0208/7161/0468/files/share-img.jpg'
+      }
+    ],
+    link: [
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.css' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+
+      ]
+  },
+  components: { VueSlickCarousel },
+
+}
+
+</script>
+
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,500,600,700,800');
+
+*, body{
+  font-family: Montserrat,sans-serif!important;
+}
+
+
+/* HERO SECTION CSS */
+
+.hero-section{
+  background:#B4DCE4;
+}
+
+.text-box {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 15rem 5rem;
+}
+
+.product-heading-2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px;
+}
+
+
+.faq-box{
+  width: 45%;
+  margin: 0 auto;
+}
+
+
+/* Slick navigation arrow positioning */
+ /* the parent */
+button.prev{
+     font-size: 0!important;
+    border-radius: 50%;
+    display: flex!important;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+	margin-right: 30px;
+}
+
+button.next{
+    font-size: 0!important;
+    border-radius: 50%;
+    display: flex!important;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+button.prev:after{
+    content: "\f104";
+    color: green;
+    font-size: 40px;
+    background: #AFEDD2;
+    border-radius: 50%;
+    padding-left: 23px;
+    padding-right: 23px;
+    font-family: 'FontAwesome';
+}
+
+button.next:before{
+
+    content: "\f105";
+    color: green;
+    background: #AFEDD2;
+    border-radius: 50%;
+    font-size: 40px;
+    background: #AFEDD2;
+    border-radius: 50%;
+    padding-left: 23px;
+    padding-right: 23px;
+    font-family: 'FontAwesome';
+
+}
+
+
+
+
+
+.slick-slide > div {
+  margin: 0 50px !important;
+}
+.slick-list {
+  margin: 0 -50px !important;
+}
+
+.testimonials div:focus {
+    outline: none !important;
+}
+.single:focus {
+    outline: 0;
+}
+button:focus {outline:0;}
+
+
+
+button.slick-arrow {
+    display:none !important;
+}
+
+.slideNav {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0px;
+}
+
+
+/* REVIEWS SLIDER */
+.reviews_container .slideNav {
+    display: flex;
+    justify-content: center;
+    grid-gap: 20px;
+    gap: 0px;
+}
+
+.reviews .slick-slider{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.reviews {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+/* BUTTON HOVER EFFECTS */
+.takeoff-btn, .explore-btn, .footer_container .takeoff-btn{
+  position:relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+@keyframes shine {
+    100% {
+        left: -200%
+    }
+}
+
+
+.takeoff-btn:before, .explore-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 150%;
+    width: 200%;
+    height: 100%;
+    transform: skewX(-20deg);
+    background-image: linear-gradient(to right, transparent, rgb(255 255 255 / 7%));
+}
+
+.takeoff-btn:hover:before, .explore-btn:hover:before {
+    animation: shine 0.75s cubic-bezier(0.01, 0.56, 1, 1);
+}
+
+
+/* BUTTON HOVER EFFECTS END*/
+
+.heading {
+  font-size:40px;
+  line-height: 1.2;
+  @apply font-bold;
+}
+
+.timeline_container {
+    margin: 0 auto;
+    min-height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-bottom: 5rem;
+    text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  min-height: 750px;
+  @apply py-20;
+}
+
+.title {
+  font-family:
+    'Quicksand',
+    'Source Sans Pro',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+  display: block;
+  font-weight: 300;
+  font-size: 100px;
+  color: #35495e;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-weight: 300;
+  font-size: 42px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
+}
+
+.links {
+  padding-top: 15px;
+}
+
+
+/* HERO SECTIONS */
+
+
+
+.hero-bg {
+    position: absolute;
+    left: 0;
+    bottom: -110px;
+    max-width: 100%;
+}
+
+
+.explore-btn {
+    color: #3CA06B;
+    border-color: #3CA06B;
+}
+
+.takeoff-btn {
+  background-color:#3CA06B;
+}
+
+.logo {
+    top: 6%;
+    left: 13%;
+}
+
+
+
+/* TESTIMONIALS */
+body, html {
+    overflow-x: hidden;
+}
+
+
+.testimonials {
+    background: #3CA06A;
+    min-height: 630px;
+    margin-bottom: 150px;
+    padding: 10rem 4rem;
+}
+.testimonials-inner {
+    width: 45%;
+}
+
+.testimonial-bg {
+    right: -15%;
+    top: -19%;
+    max-width: 100%;
+}
+.testimonial-bg img {
+    max-width: 90%;
+}
+
+
+.testimonials_container {
+
+    background: url('~assets/images/collage.png');
+    background-repeat: no-re
+    peat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 350px;
+    padding-bottom: 400px;
+}
+
+/* FAQ SECTION */
+.faq_container {
+    background: #AFEDD2;
+    padding-top: 3.5rem;
+    padding-bottom: 4.5rem;
+}
+
+.faq .paragraph:first-child {
+    margin-right: 25px;
+}
+
+/* PARAGRAPH PADDING */
+p.paragraph {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/* REVIEWS CONTAINER */
+.reviews_container {
+    background: #FFF6ED;
+    min-height: 250px;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+
+/* FOOTER CONTAINER */
+
+
+.footer_container {
+    background: #231F20;
+    min-height:600px;
+}
+
+.footer-cta-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-cta-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10rem 10rem;
+    align-items: flex-start;
+}
+
+.mobile-footer-bg-2 {
+    right: 0%;
+    bottom: 0;
+    max-width: 50%;
+}
+
+/* TIMELINE CSS */
+.v-timeline-item__opposite {
+    flex: none !important;
+}
+
+.theme--light.v-timeline::before {
+    background-image: linear-gradient(#969292 48%, rgba(255,255,255,0) 0%)  !important;
+    background-position: right  !important;
+    background-size: 6px 10px  !important;
+    background-repeat: repeat-y  !important;
+    transition: 1s ease-in-out;
+}
+
+.v-timeline:before {
+  top: 25px  !important;;
+  bottom: 50px  !important;;
+}
+
+.theme--light.v-timeline::before {
+    height: auto  !important;;
+}
+
+.v-timeline-item.theme--light:last-child {
+    background: url('~assets/images/plane.png') !important;
+    background-repeat: no-repeat  !important;;
+    background-size: 40px  !important;;
+    background-position: 50% 98%  !important;;
+}
+
+.v-timeline-item__dot {
+    z-index: 2;
+    border-radius: 50%;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    height: 20px  !important;;
+    left: calc(50% - 19px);
+    width: 20px  !important;;
+    background: #000 !important;
+    outline-offset: 5px;
+    box-shadow: 0px 0px 0px 6px #fff inset  !important;;
+}
+
+.v-timeline-item__divider {
+    position: relative;
+    min-width: 96px;
+    display: flex;
+    justify-content: center;
+    align-self: start !important;
+}
+
+.imageRight{
+  float: right;
+}
+/* TIMELINE CSS END */
+
+
+/* FOOTER CSS END */
+
+
+
+/* Brand Design */
+.border-custom {
+  border: 3px solid #3CA06B;
+}
+
+/* WHAT BOXES FLEXBOX */
+.whats_boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+    width: 100%;
+    justify-content: center;
+    align-items: stretch;
+    padding-top: 50px;
+}
+
+
+
+/* UL LI PLUS ICON */
+ul {
+    list-style: none !important;
+}
+
+li:before {
+    content: "+";
+    margin-right: 4px;
+}
+
+
+
+.container.reviews-height {
+    min-height: 580px;
+}
+
+.reviews_container .slick-slide > div {
+    margin: 0px 15px !important;
+}
+.reviews_container .slick-slide>div>div{
+  outline:0;
+}
+
+
+
+/* RESPONSIVE */
+
+.sub-heading{
+  font-size: 27px;
+  line-height: 33px;
+  @apply font-bold
+}
+
+
+.sub-heading-p20{
+  font-size: 27px;
+  line-height: 33px;
+  padding-bottom: 20px;
+  @apply font-bold
+}
+
+.paragraph{
+  font-size: 16px;
+  line-height: 22px;
+  color:#333333;
+  font-weight: 500;
+}
+
+.paragraph-white{
+  font-size: 16px;
+  line-height: 22px;
+  color:#ffff;
+  font-weight: 500;
+}
+
+.header {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+
+
+
+
+img {
+    height: auto !important;
+}
+
+.faq .paragraph {
+    margin-right: 10px;
+}
+
+.slick-slider {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+/* DESKTOP */
+
+
+
+@media (min-width:1024px) and (max-width:1520px){
+
+
+
+.testimonials_container {
+    background: url(/_nuxt/assets/images/collage.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+  .sub-heading {
+    font-size: 27px;
+    line-height: 33px;
+    padding-bottom: 20px;
+    font-weight: 700;
+}
+
+
+
+.takeoff-btn, .explore-btn {
+    background-color: #3CA06B;
+    font-size: 1.375rem;
+    line-height: 27px;
+    padding: 25px 94px;
+    display:block;
+    width: auto;
+}
+
+
+.faq_container .takeoff-btn {
+    background-color: #3CA06B;
+    font-size: 1.375rem;
+    line-height: 27px;
+    padding: 25px 100px;
+    display:block;
+    width:76%;
+    margin:0 auto;
+}
+
+.explore-btn{
+  background-color: transparent;
+  padding: 25px 48px;
+}
+
+.footer.takeoff-btn{
+    padding: 25px 40px;
+}
+
+.faq_container .takeoff-btn {
+    font-size: 1.375rem;
+    padding: 25px 50px;
+    width: 76%;
+}
+
+
+
+.box {
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 0px;
+	margin: 15px;
+}
+
+.footer-cta {
+    width: 65%;
+}
+
+
+
+.footer-cta {
+    width: 100%;
+}
+
+
+
+.hero-bg {
+    position: absolute;
+    left: -380px;
+    bottom: -115px;
+    display: inline-flex;
+    max-width: 85%;
+}
+
+
+
+
+.mobile-footer-bg {
+    height: auto;
+    bottom: 0;
+    width: 60%;
+    max-width: 100%;
+    right: -15%;
+}
+
+
+.footer-cta-2 {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding: 5rem 10rem;
+    min-height: 400px;
+}
+
+
+
+}
+
+
+
+
+@media (min-width:1521px){
+
+.faq_box {
+    width: 60%;
+}
+
+  .whats_boxes {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 30px;
+    gap: 100px;
+    width: 100%;
+    justify-content: center;
+    align-items: stretch;
+    padding-top: 50px;
+}
+
+.what_in_our_pouches {
+    width: 60%;
+}
+
+  .box {
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 15px;
+}
+.takeoff-btn, .explore-btn {
+    background-color: #3CA06B;
+    font-size: 1.375rem;
+    line-height: 27px;
+    padding: 25px 106px;
+    display:block;
+    width:auto;
+}
+
+.explore-btn{
+  background-color: transparent;
+  padding: 25px 64px;
+}
+
+.faq_container .takeoff-btn {
+    background-color: #3CA06B;
+    font-size: 1.375rem;
+    line-height: 27px;
+    padding: 25px 50px;
+    display: block;
+    width: 76%;
+    margin: 0 auto;
+}
+
+
+
+.hero-bg {
+    position: absolute;
+    left: -110px;
+    bottom: -110px;
+    display: inline-flex;
+    max-width: 60%;
+}
+
+.mobile-footer-bg {
+    bottom: 0;
+    right: 15%;
+    max-width: 100%;
+}
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+@media (min-width:1521px) and (max-width:1920px){
+
+.reviews {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+
+.faq_container .takeoff-btn {
+    background-color: #3CA06B;
+    font-size: 1.375rem;
+    line-height: 27px;
+    padding: 25px 50px;
+    display: block;
+    width: auto;
+}
+
+.mobile-footer-bg {
+    bottom: 0;
+    right: 15%;
+    max-width: 100%;
+}
+
+.faq-box {
+    max-width: 45%;
+}
+
+.faq .paragraph {
+    width: initial;
+}
+
+.faq_box_container .cta {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.product-heading {
+    display: inline-flex;
+    justify-content: center;
+}
+.bullets {
+    width: 52%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.text-box {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10rem 20rem;
+}
+
+.mobile-footer-bg-2 {
+    right: 15%;
+    bottom: 0;
+    max-width: 100%;
+}
+
+.testimonial-bg {
+    right: 9% !important;
+    top: -16% !important;
+    max-width: 100%;
+}
+
+.testimonials-inner {
+    width: 33%;
+}
+
+.mobile-footer-bg-2 {
+    right: 15%;
+    bottom: 0;
+    max-width: 60%;
+}
+
+
+
+}
+
+@media (min-width:1521px) and (max-width:1770px){
+
+.mobile-footer-bg-2 {
+    right: -5%;
+    bottom: 0;
+    max-width: 100%;
+}
+
+.mobile-footer-bg {
+    bottom: 0;
+    right: 5%;
+    max-width: 100%;
+}
+
+.testimonial-bg {
+    right: -6% !important;
+    top: -14%!important;
+    max-width: 100%;
+}
+
+
+}
+
+@media (min-width:1400px) {
+
+.testimonial-bg {
+    right: -6% !important;
+    top: -14% !important;
+    max-width: 100%;
+}
+
+.testimonials-inner {
+    width: 35% !important;
+}
+
+.bullets {
+    width: 52%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+}
+
+
+@media (min-width:1121px) {
+
+
+  .reviews_container button.slick-arrow.slick-next {
+    width: 90%;
+    right: 0px;
+    left: 80px;
+}
+
+.reviews_container button.slick-arrow.slick-prev {
+    width: 90%;
+    position: absolute;
+    left: 120px;
+}
+
+
+   .testimonials_container{
+    display:block;
+  }
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.product-heading {
+    display: inline-flex;
+    justify-content: center;
+}
+
+
+
+.bullets {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.slick-slider {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.footer_container {
+    background: #231F20;
+    min-height: 450px;
+}
+
+
+.timeline-header {
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+
+}
+
+@media (min-width:1125px) and (max-width:1400px) {
+
+.testimonials_container {
+    background-size: cover;
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+
+
+.mobile-footer-bg {
+    height: auto;
+    bottom: 0;
+    width: 60%;
+    max-width: 100%;
+    right: -15%;
+}
+
+
+
+.timeline_container{
+  width:100%;
+}
+
+.faq_container .takeoff-btn {
+    font-size: 1.375rem;
+    padding: 25px 50px;
+    width: 76%;
+}
+
+
+
+.product-heading {
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+
+.bullets {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+}
+
+.cta {
+    text-align: center;
+}
+
+.text-box {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10rem 5rem;
+}
+
+
+}
+
+@media (max-width:1400px){
+
+.testimonials {
+    background: #3CA06A;
+    min-height: 900px;
+    margin-bottom: 100px;
+    padding: 10rem 0rem;
+    margin-top: 150px;
+}
+.testimonials-inner{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+.testimonial-bg {
+    left: 25%;
+    top: -12%;
+    max-width: 60%;
+}
+
+.slideNav {
+    display: flex;
+    justify-content: center;
+    grid-gap: 20px;
+    gap: 0px;
+}
+
+.testimonials .slick-slider {
+    padding: 0rem 10rem;
+}
+
+
+
+}
+
+
+
+
+@media (min-width:1024px) and (max-width:1124px) {
+
+.hero-section {
+    min-height: 1180px;
+}
+
+
+.text-box {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10rem 18rem;
+}
+.hero-bg {
+    left: 10%;
+    bottom: -100px;
+    max-width: 100%;
+    width: 85%;
+}
+
+
+
+
+}
+
+
+/* IPAD */
+
+@media (max-width:1120px) {
+
+
+
+.slick-list {
+    position: relative;
+}
+
+
+
+.slideNav {
+    display: flex;
+    justify-content: center;
+    grid-gap: 20px;
+    gap: 0px;
+}
+
+.testimonial-bg {
+    left: 20%;
+    top: -12%;
+    max-width: 68%;
+}
+
+  .what_in_our_pouches {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+  .faq_container {
+    margin-top: 0px;
+}
+
+  .faq_container > div {
+    width: 100%;
+}
+
+  .sub-heading {
+    font-size: 27px;
+    line-height: 33px;
+    padding-bottom: 20px;
+    font-weight: 700;
+}
+
+
+
+.faq_container .takeoff-btn {
+    font-size: 1.375rem;
+    width: 76%;
+    padding: 25px 30px !important;
+}
+
+
+
+
+
+
+.takeoff-btn, .explore-btn{
+  width: auto;
+}
+
+
+
+  .timeline_container {
+    padding: 0px;
+}
+
+
+
+
+  .testimonials_container{
+    display:none;
+  }
+
+
+.header img {
+    width: 20%;
+}
+
+a.footer.takeoff-btn {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+
+.mobile-footer-bg {
+    height: auto;
+    bottom: 0;
+    width: 50%;
+    max-width: 100%;
+    right: 0;
+}
+
+
+.reviews_container button.slick-arrow.slick-next {
+    width: 90%;
+    right: 0px;
+    left: 100px;
+}
+
+.reviews_container button.slick-arrow.slick-prev {
+    width: 90%;
+    position: absolute;
+    left: -16px;
+}
+
+
+
+.timeline_container{
+  width:100%;
+  padding-left:2rem;
+  padding-right:2rem;
+}
+
+.faq-box {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.footer-cta-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5rem 18rem;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+
+}
+
+
+
+
+@media (min-width:684px) and (max-width:1120px) {
+
+
+.text-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10rem 8rem;
+}
+
+
+.product-heading {
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+
+.bullets {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 56%;
+}
+
+.cta {
+    text-align: center;
+}
+
+
+.mobile-footer-bg-2 {
+    right: 25%;
+    bottom: 0;
+    max-width: 40%;
+}
+
+
+
+
+}
+
+
+@media (max-width:1024px) {
+
+.h-hero {
+    min-height: 1180px;
+}
+
+  .takeoff-btn, .explore-btn{
+    background-color: #3ca06b;
+    font-size: 1.375rem;
+    line-height: 27px;
+    padding: 25px 106px;
+    display: block;
+    width: auto;
+}
+
+.mobile-footer-bg {
+    height: auto;
+    right: 0;
+    width: 45%;
+    max-width: 100%;
+    bottom: 0;
+}
+
+
+
+}
+
+
+
+@media (min-width:684px) and (max-width:1023px) {
+
+  .mobile-footer-bg {
+    height: auto;
+    left: 25%;
+    width: 45%;
+    max-width: 100%;
+    bottom: 0;
+}
+
+.mobile-footer-bg-2 {
+    right: 20%;
+    bottom: 0;
+    max-width: 45%;
+}
+
+
+
+}
+
+@media (min-width:684px) and (max-width:1120px) {
+
+
+
+.testmonials_mobile {
+    background: #3CA06A;
+    padding: 6rem;
+}
+
+.testmonials_mobile p {
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(255,255,255,1);
+    font-weight: 500;
+    text-align: center;
+}
+
+.text-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10rem 6rem;
+}
+
+
+
+}
+
+
+@media (min-width:1121) and (max-width:1300px) {
+
+.text-box {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 15rem 5rem;
+}
+
+.testmonials_mobile {
+    display: none !important;
+}
+  .text-box {
+    width: 100%;
+}
+
+
+
+
+}
+
+@media (max-width:950px) {
+
+.h-hero {
+    min-height: 1140px;
+}
+
+.hero-bg {
+    position: absolute;
+    left: 0;
+    bottom: -100px;
+    max-width: 100%;
+}
+
+
+.testimonials {
+    background: #3CA06A;
+    min-height: 780px;
+    margin-bottom: 150px;
+    padding: 10rem 0rem;
+    margin-top: 150px;
+}
+
+
+}
+
+
+
+/* MOBILE */
+@media (max-width:650px) {
+
+.logo {
+	left: 0;
+}
+.logo img {
+	margin: auto;
+}
+
+  .testimonials {
+    background: #3CA06A;
+    min-height: 650px;
+    margin-bottom: 150px;
+    padding: 10rem 0rem;
+    margin-top: 150px;
+}
+  .slick-slider {
+    padding: 0rem 0rem;
+}
+
+  .what_in_our_pouches {
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+  .timeline_container {
+    width: 100%;
+}
+
+  .header img {
+    width: 33%;
+}
+
+  .single p {
+    font-size: 16px !important;
+    line-height: 26px !important;
+}
+
+
+.timeline_container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top:1rem;
+    padding-bottom:1rem;
+}
+
+.step-des p {
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.testimonials_container{
+  display: none;
+}
+
+
+.what_in_our_pouches {
+    padding-top: 50px;
+}
+.faq_container {
+    margin-top: 4rem;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 40px;
+}
+.faq-box {
+    width: 100%;
+}
+
+.faq_container .takeoff-btn {
+        font-size: 1.375rem;
+    margin-left: 0;
+    background-color: #3CA06B;
+    width: auto;
+    margin:0 auto;
+}
+.faq_container .takeoff-btn {
+    margin-left: 0;
+}
+
+a.footer.takeoff-btn {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+
+.header {
+    padding-top: 2rem;
+}
+
+
+.faq_container .cta.pt-10 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+
+.reviews_container .container {
+    padding-top: 2rem;
+}
+
+.footer-cta p {
+    padding-right: 0px;
+}
+
+
+.heading {
+    font-size: 35px;
+    line-height: 1.2;
+    font-weight: 700;
+
+}
+
+a.takeoff-btn {
+    font-size: 18px;
+    padding: 20px 28px;
+text-align: center;
+}
+button.explore-btn {
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.faq {
+    align-items: center;
+}
+
+
+.sub-heading{
+    font-size: 1.375rem;
+    line-height: 33px;
+    padding-bottom: 0px;
+    font-weight: 700;
+}
+
+.mobile-footer-bg {
+    bottom: 0;
+    width: 65%;
+    left: 25%;
+}
+
+
+.timeline_container .sub-heading {
+    font-size: 20px;
+    line-height: 1.1;
+    padding-bottom: 0px;
+    font-weight: 700;
+}
+
+.container.reviews-height {
+    min-height: 480px;
+}
+
+.hero-bg {
+    position: absolute;
+    left: 0;
+    bottom: -70px;
+    max-width: 100%;
+}
+
+.footer-cta-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5rem 5rem;
+    align-items: center;
+    min-height: 700px;
+}
+
+} /** 600px breakpoint width */
+
+
+
+
+@media (min-width:1121px) and (max-width:1440px) {
+
+
+
+.text-box {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10rem 3rem;
+}
+
+
+.faq-box {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.timeline-header {
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+}
+
+@media (min-width:769px) and (max-width: 1120px){
+
+.timeline-header {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+.box {
+	width: 45%;
+	margin: 9px;
+}
+
+a.footer.takeoff-btn {
+    background-color: #3CA06B;
+    font-size: 1.375rem;
+    line-height: 27px;
+    padding: 25px 30px;
+    margin-top: 20px;
+}
+
+.footer-cta {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.footer-cta-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5rem 5rem;
+    align-items: center;
+}
+.mobile-footer-bg-2 {
+    right: 20%;
+    bottom: 0;
+    max-width: 50%;
+}
+
+}
+
+@media (max-width:1120px) {
+
+
+
+.mobile-footer-bg-2 {
+    bottom: 0;
+    max-width: 100%;
+    transform: translateX(15%);
+}
+
+.footer-cta-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5rem 5rem;
+    align-items: center;
+    min-height: 800px;
+}
+
+}
+
+
+
+@media (min-width:1000px) and (max-width:1120px) {
+
+.footer-cta-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5rem 15rem;
+    align-items: center;
+    min-height: 800px;
+}
+
+}
+
+
+
+
+@media (min-width:718px) and (max-width:1080px) {
+
+.faq_container .takeoff-btn {
+    font-size: 18px;
+    width: 76%;
+    padding: 25px 60px !important;
+    margin: 0 auto;
+}
+
+}
+
+
+@media (min-width:769px) and (max-width:999px) {
+
+.testimonials {
+    background: #3CA06A;
+    min-height: 800px;
+    margin-bottom: 150px;
+    padding: 10rem 0rem;
+    margin-top: 150px;
+}
+
+.footer-cta-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5rem 5rem;
+    align-items: center;
+    min-height: 750px;
+}
+
+}
+
+
+
+
+@media (max-width:768px) {
+
+
+
+
+.text-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10rem 5rem;
+}
+
+.testimonials {
+    background: #3CA06A;
+    min-height: 750px;
+    margin-bottom: 150px;
+    padding: 10rem 0rem;
+    margin-top: 150px;
+}
+
+  .footer-cta {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+
+  ul.list-disc.pl-5.m-0.paragraph {
+    padding-left: 0px;
+}
+
+
+button.slick-arrow.slick-prev {
+    position: absolute;
+    bottom: -60px;
+    left: 325px;
+}
+
+button.slick-arrow.slick-next {
+    position: absolute;
+    bottom: -60px;
+    left: 140px;
+}
+
+.footer-cta {
+  width:87%;
+}
+
+
+.what_in_our_pouches {
+    width: 95%;
+}
+
+
+
+
+a.footer.takeoff-btn {
+    background-color: #3CA06B;
+    font-size: 1.375rem;
+    line-height: 27px;
+    padding: 25px 30px;
+}
+
+
+.footer-cta {
+    width: 100%;
+}
+
+.mobile-footer-bg {
+    bottom: 0;
+    width: 50%;
+    right: 0;
+}
+
+
+
+.timeline_container .paragraph {
+    padding: 0px;
+    font-size: 16px;
+}
+
+.box {
+    width: 45%;
+	margin: 9px;
+}
+
+.faq_container .takeoff-btn {
+    font-size: 18px;
+    width: 76%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 0 auto;
+}
+.mobile-footer-bg {
+    bottom: 0;
+    width: 50%;
+    left: 25%;
+}
+
+.timeline-header {
+    padding-top: 5rem;
+}
+
+.container.reviews-height {
+    min-height: 540px;
+}
+
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+.product-heading {
+    display: inline-flex;
+    justify-content: center;
+}
+.bullets {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.h-hero {
+    min-height: 1040px;
+}
+
+
+.slick-slider {
+    padding: 0rem 2rem !important;
+}
+
+
+.faq-box {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footer-cta-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5rem 5rem;
+    align-items: center;
+    min-height: 720px;;
+}
+
+.mobile-footer-bg-2 {
+    bottom: 0;
+    max-width: 100%;
+    transform: translateX(15%);
+}
+
+.timeline-header {
+    padding-top: 5rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+
+}
+
+
+@media (max-width:699px) {
+
+
+  .bullets {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10rem 3rem;
+}
+
+.mobile-footer-bg-2 {
+    bottom: 0;
+    max-width: 100%;
+    transform: translateX(0%);
+}
+
+
+
+}
+
+
+@media (max-width:650px) {
+
+.container.reviews-height {
+    min-height: 480px;
+}
+
+.faq_container .takeoff-btn {
+    font-size: 1.375rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.reviews_container {
+    background: #FFF6ED;
+    min-height: 460px;
+}
+
+
+.text-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 6rem 2rem;
+}
+
+
+.h-hero {
+    min-height: 940px;
+}
+
+.footer-cta-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5rem 5rem;
+    align-items: center;
+    min-height: 690px;
+}
+
+.mobile-footer-bg-2 {
+    bottom: 0;
+    max-width: 100%;
+    transform: translateX(0%);
+}
+
+button.takeoff-btn {
+    font-size: 18px;
+    padding: 20px 28px;
+    width: 100%;
+}
+
+}
+
+
+@media (max-width:550px) {
+
+.reviews {
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+
+
+.h-hero {
+    min-height: 780px;
+}
+.text-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 6rem 2rem;
+}
+
+.testimonials {
+    background: #3CA06A;
+    min-height: 600px;
+    margin-bottom: 150px;
+    padding: 25rem 0rem;
+    margin-top: 0px;
+}
+
+.mobile-footer-bg {
+    bottom: 0;
+    width: 65%;
+    left: 25%;
+}
+
+.slick-slider {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+
+
+.faq_container .takeoff-btn {
+    font-size: 18px;
+    margin-left: 0;
+    background-color: #3CA06B;
+    width: auto;
+    padding: 25px 40px !important;
+}
+
+.heading {
+    font-size: 27px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.hero-bg {
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    max-width: 100%;
+}
+
+
+.footer-cta-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5rem 2rem;
+    align-items: center;
+    min-height: 530px;
+}
+
+.footer_container {
+	min-height: 530px;
+}
+
+.reviews_container button.slick-arrow.slick-next {
+    width: 90%;
+    right: 0px;
+    left: 70px;
+}
+
+.testimonials {
+    background: #3CA06A;
+    min-height: 630px;
+    margin-bottom: 150px;
+    padding: 25rem 0rem;
+    margin-top: 0px;
+}
+
+
+.testimonial-bg img {
+    max-width: 100%;
+}
+
+.testimonials {
+    background: #3CA06A;
+    min-height: 680px;
+    margin-bottom: 60px;
+    padding: 10rem 0rem;
+    margin-top: 200px;
+}
+
+.testimonial-bg {
+    left: 0;
+    top: -9%;
+    max-width: 100%;
+}
+
+.mobile-footer-bg-2 {
+    bottom: 0px;
+    max-width: 100%;
+    transform: translateX(2%);
+}
+
+button.takeoff-btn {
+    font-size: 1.375rem;
+    padding: 20px 28px;
+    width: 100%;
+}
+
+}
+
+
+
+@media (max-width:474px) {
+    .testimonials {
+    background: #3CA06A;
+    min-height: 600px;
+    margin-bottom: 0px;
+    padding: 25rem 0rem;
+    margin-top: 0px;
+}
+
+.heading {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.mobile-footer-bg {
+    bottom: 0;
+    width: 80%;
+    left: 20%;
+}
+
+.text-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 6rem 1rem;
+}
+
+
+}
+
+
+
+@media (max-width:490px) {
+
+
+
+a.footer.takeoff-btn {
+    background-color: #3CA06B;
+    font-size: 1.375rem;
+    line-height: 27px;
+    padding: 25px 30px;
+    margin-top: 20px;
+    width:auto;
+}
+
+.bullets {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.hero-bg {
+    position: absolute;
+    left: 0;
+    bottom: -50px;
+    max-width: 100%;
+}
+
+
+}
+
+@media (max-width:414px) {
+  .hero-bg {
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    max-width: 100%;
+}
+
+.header .paragraph {
+    font-size: 14px;
+    line-height: 22px;
+    color: #333333;
+    font-weight: 500;
+}
+
+a.footer.takeoff-btn {
+    background-color: #3CA06B;
+    font-size: 18px;
+    line-height: 27px;
+    padding: 25px 30px;
+    margin-top: 20px;
+    width:auto;
+}
+
+
+.explore-btn, .takeoff-btn {
+    background-color: #3ca06b;
+    font-size: 1.375rem;
+    line-height: 27px;
+    padding: 25px 106px;
+    display: block;
+    width: auto;
+}
+
+.whats_boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+    width: 100%;
+    justify-content: center;
+    align-items: stretch;
+    padding-top: 50px;
+}
+
+.faq p.paragraph {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+}
+
+
+
+.paragraph-white {
+    font-size: 15px;
+    line-height: 22px;
+    color: rgba(255,255,255,1);
+    font-weight: 500;
+}
+
+
+.mobile-footer-bg {
+    left: 15%;
+    width: 80% !important;
+    right: 0;
+}
+
+.timeline_container .sub-heading {
+    font-size: .875rem;
+    line-height: 1;
+    padding-bottom: 0px;
+    font-weight: 700;
+}
+
+.timeline_container .paragraph {
+    padding: 0px;
+    font-size: .75rem;
+}
+
+.timeline-header {
+    padding-top: 5rem;
+}
+.bullets {
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+}
+
+
+@media(max-width:375px) {
+
+
+.heading {
+    font-size: 26px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+
+.box {
+    width: 45%;
+	margin: 8px;
+}
+
+.paragraph {
+    font-size: 16px;
+    line-height: 22px;
+    color: #333333;
+    font-weight: 500;
+}
+
+
+ul.list-disc.pl-5.m-0.paragraph {
+    padding-left: 0px;
+}
+
+
+
+.mobile-footer-bg {
+    bottom: 0;
+    left: 15%;
+}
+
+.faq_container .takeoff-btn {
+    font-size: 18px !important;
+    margin-left: 0;
+    background-color: #3CA06B;
+    width: auto;
+    padding: 25px 40px !important;
+}
+
+a.footer.takeoff-btn {
+    background-color: #3CA06B;
+    font-size: 17px;
+    line-height: 27px;
+    padding: 25px 30px;
+    margin-top: 20px;
+    width:auto;
+}
+
+
+.timeline-header {
+    padding-top: 2rem;
+}
+
+.bullets {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    font-size: 17px !important;
+}
+
+
+
+}
+
+
+
+</style>
